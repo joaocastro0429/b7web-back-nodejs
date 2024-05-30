@@ -1,0 +1,17 @@
+{
+  "name": "b7web-back-nodejs",
+  "version": "1.0.0",
+  "main": "teste.js",
+  "scripts": {
+    "start": "node  --env-file=.env --import=tsx --watch src/teste.ts "
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "tsx": "^4.11.0",
+    "typescript": "^5.4.5"
+  }
+}
