@@ -7,12 +7,16 @@ const exec=async()=>{
     await writeFile('./teste.txt','testando 1,2,3')
     // juntando e quebrando por linha 
     const list=['joao','elias','jeremias']
+    list.push('fulano')
    const txtList= list.join('\n')
    await writeFile('./teste.txt',txtList)
     // lendo arquivos
    const fileContent= await readFile('./teste.txt',{encoding:'utf8'})
-
-   console.log(fileContent)
+    // alterando 
+   const list2= await fileContent.split('\n')
+   console.log(list2)
+   const listText=list2.join('\n')
+   await writeFile('./teste.txt',listText)
 
 
 
