@@ -1,5 +1,6 @@
 
 import express from 'express'
+// helmet faz uma seguraça para evitar invasão 
 import helmet from 'helmet'
 import path from 'path'
 import router from './routes'
@@ -15,9 +16,6 @@ server.use(express.static(path.join(__dirname,'../public')))
 server.use('/',router)
 server.use(notFoundResquest)
 server.use(errohandler)
-
-
-
 
 server.listen(3333)
 
