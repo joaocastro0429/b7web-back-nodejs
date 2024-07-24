@@ -1,4 +1,4 @@
-import {writeFile,readFile} from 'fs/promises'
+import {writeFile,readFile,unlink} from 'fs/promises'
 
 
 const exec=async()=>{
@@ -17,10 +17,8 @@ const exec=async()=>{
    console.log(list2)
    const listText=list2.join('\n')
    await writeFile('./teste.txt',listText)
-
-
-
-
+//    excluindo arquivo 
+   await unlink('./teste.txt')
 
 }
 
