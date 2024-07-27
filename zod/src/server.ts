@@ -1,16 +1,18 @@
 import express from 'express'
-import {router} from './zod'
+import  routes from './request'
+const server = express()
 
-const server=express()
 server.use(express.json())
-server.use(express.urlencoded({extended:true}))
+server.use(express.urlencoded({ extended: true }))
 
-server.use('/api',router)
+server.use(routes)
 
-server.get("/",(req,res)=>{
-    return res.json({pong:true})
 
+
+server.get("/", (req, res) => {
+    return res.json({ pong: true })
 })
 
-
-server.listen(3333,()=>console.log('running server => http://localhost:3333'))
+server.listen(3333, () => {
+    console.log("running")
+})
