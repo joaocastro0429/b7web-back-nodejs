@@ -1,11 +1,12 @@
 import express from 'express'
-import dotenv from 'dotenv/config'
+import {routes} from './routes/User'
+
 
 const server=express()
+server.use(express.json())
+server.use(express.urlencoded({extended:true}))
 
-server.get("/",(req,res)=>{
-    return res.json({msg:"Primeira com prisma"})
-})
+server.use("/api",routes)
 
 
 server.listen(process.env.PORT,()=>console.log("running server"))
