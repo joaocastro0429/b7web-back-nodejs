@@ -6,7 +6,7 @@ const server=express()
 server.use(express.json())
 server.use(express.urlencoded({extended:true}))
 
-server.use("/api",routes)
+server.use(routes)
 
 
 server.listen(process.env.PORT,()=>console.log("running server"))
