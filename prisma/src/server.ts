@@ -1,12 +1,18 @@
 import express from 'express'
-import {routes} from './routes/User'
+import 'dotenv/config'
+import path from 'path'
+import {route} from './routes/User'
 
 
 const server=express()
+
 server.use(express.json())
+server.use(express.static(path.join(__dirname,'../public')))
 server.use(express.urlencoded({extended:true}))
 
-server.use(routes)
+server.use(route)
 
 
-server.listen(process.env.PORT,()=>console.log("running server"))
+
+
+server.listen(process.env.PORT)
