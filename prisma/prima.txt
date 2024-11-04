@@ -1,0 +1,7 @@
+Prisma 
+- o prisma db push- pega o banco de dados e com base nele e cria um schema.
+
+Prisma pull Atualização do Schema: Se você fez alterações diretamente no banco de dados (como adicionar uma nova tabela ou coluna), o prisma pull irá capturar essas mudanças 
+e atualizar seu arquivo de esquema.
+
+mapping - quando utilizamos uma @ estamos referindo a mudança em um campo na tabela , quando @@ para a tabela toda 
