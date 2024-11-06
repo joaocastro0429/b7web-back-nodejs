@@ -6,15 +6,10 @@ type createProps={
     email:string,
 }
 
-export const createUser=async ({name,email}:createProps)=>{
+export const createUser=async (data:Prisma.UserCreateInput)=>{
     try{
 
-        const user=await prisma.user.create({
-            data:{
-                name,
-                email
-            }
-        })
+        const user=await prisma.user.create({data})
         return user
 
     }catch(error){
