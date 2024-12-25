@@ -22,3 +22,15 @@ export const createUser=async (data:Prisma.UserCreateInput)=>{
     
 }
 
+export const createUsers=async (users:Prisma.UserCreateInput[])=>{
+    const result=await prisma.user.createMany({
+        data:[
+            {name:"joao",email:"joao@email.com"},
+            {name:"joao2",email:"joao@emmail.com"}
+        ],
+        skipDuplicates:true
+    })
+}
+
+
+
