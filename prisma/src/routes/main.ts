@@ -21,8 +21,12 @@ mainRouter.post('/user',async(request,response)=>{
 })
 
 mainRouter.post('/users',async(request,response)=>{
-    const users=await createUsers([])
-    return response.status(200).json({ok:true})
+    const users=await createUsers([
+
+        {name:"joao",email:"joao@email.com"},
+        {name:"joao2",email:"joao@emmail.com"}
+    ])
+    return response.status(200).json({count:users})
 })
 
 
