@@ -28,6 +28,7 @@ model User {
 model Post {
   id       Int     @id @default(autoincrement())
   title    String
+  body     String
   subtitle String?
   userId   Int
   user     User    @relation(fields: [userId], references: [id])
