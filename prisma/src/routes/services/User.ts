@@ -1,5 +1,6 @@
 import { Prisma } from "@prisma/client"
 import { prisma } from "../../libs/prisma"
+import { title } from "process"
 
 type createProps={
     name:string,
@@ -36,13 +37,21 @@ export const getAllUsers=async ()=>{
 
 export const getUserByEmail= async (email:string)=>{
     const user = await prisma.user.findFirst({
-        where:{
-            email
-        },
-        select:{
-            id:true,
-            name:true
+     where:{
+        posts:{
+            every:{
+                title:{contains:"primeiro"}
+            }
         }
+     }
+        
+        // where:{
+        //     email
+        // },
+        // select:{
+        //     id:true,
+        //     name:true
+        // }
     })
     return user
 }
