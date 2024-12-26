@@ -71,7 +71,12 @@ export const findByEmail = async (email:string)=>{
             id:true,
             name:true,
             email:true,
-            status:true
+            status:true,
+            _count:{
+                select:{
+                    posts:true
+            }
+        }
         }
     })
     return user
