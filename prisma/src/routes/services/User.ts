@@ -50,12 +50,12 @@ export const getUserByEmail= async (email:string)=>{
 export const findByEmail = async (email:string)=>{
     const user = await prisma.user.findFirst({
         where:{
-            name:{
-                startsWith:email,
-                endsWith:email
-            }
-            
-            
+            OR:[
+                {email},
+                {name:{contains:email}},
+                {name:{endsWith:email}},
+                {name:{startsWith:email}}
+            ]
             
         },
         select:{
