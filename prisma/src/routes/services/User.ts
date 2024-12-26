@@ -46,6 +46,27 @@ export const getUserByEmail= async (email:string)=>{
     })
     return user
 }
+//  fanzendo filtragem 
+export const findByEmail = async (email:string)=>{
+    const user = await prisma.user.findFirst({
+        where:{
+            name:{
+                startsWith:email,
+                endsWith:email
+            }
+            
+            
+            
+        },
+        select:{
+            id:true,
+            name:true,
+            email:true,
+            status:true
+        }
+    })
+    return user
+}
 
 
 

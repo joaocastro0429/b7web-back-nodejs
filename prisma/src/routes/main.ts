@@ -1,5 +1,5 @@
 import {Router} from 'express'
-import {createUser,createUsers, getAllUsers, getUserByEmail}from './services/User'
+import {createUser,createUsers, getAllUsers, getUserByEmail,findByEmail}from './services/User'
 export const mainRouter=Router()
 
 //Routes
@@ -46,3 +46,8 @@ mainRouter.get('/user',async(request,response)=>{
     return response.status(200).json({user})
 })
 
+mainRouter.get('/find',async(request,response)=>{
+    const findUser = await findByEmail('joao')
+    return response.status(200).json({findUser})
+
+})
