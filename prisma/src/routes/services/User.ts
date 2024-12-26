@@ -37,13 +37,22 @@ export const getAllUsers=async ()=>{
 
 export const getUserByEmail= async (email:string)=>{
     const user = await prisma.user.findFirst({
-     where:{
-        posts:{
-            every:{
-                title:{contains:"primeiro"}
+        orderBy:[
+            {
+                id:"desc"
+            },
+            {
+                name:"asc"
             }
-        }
-     }
+        ]
+        
+    //  where:{
+    //     posts:{
+    //         every:{
+    //             title:{contains:"primeiro"}
+    //         }
+    //     }
+    //  }
         
         // where:{
         //     email
