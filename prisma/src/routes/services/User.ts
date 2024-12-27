@@ -95,5 +95,27 @@ export const findByEmail = async (email:string)=>{
     return user
 }
 
+export const updateUser = async ()=>{
+    const updateUser = await prisma.user.update({
+        where: {
+          email: 'joao@email.com',
+        },
+        data: {
+            role:"ADMIN"
+        },
+      })
+        return updateUser
+}
+
+
+export const deleteUser= async ()=>{
+    const updateUser = await prisma.user.delete({
+        where: {
+          email: 'joao@email.com',
+        }
+       
+      })
+        return deleteUser
+}
 
 
