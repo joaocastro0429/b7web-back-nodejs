@@ -1,1 +1,0 @@
-O Helmet é uma biblioteca Node.js projetada para ajudar a proteger aplicações web contra vulnerabilidades de segurança comuns. Ele funciona configurando automaticamente HTTP headers que fortalecem a segurança do aplicativo.

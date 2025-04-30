@@ -1,12 +1,15 @@
-import express from 'express'
-import helmet from 'helmet'
+import express from 'express';
+import helmet from 'helmet';
+import router from './routes';
 
-const server= express()
+const server = express();
 
-server.use(helmet())
-server.use(express.json())
-server.use(express.urlencoded({ extended: true }))
+server.use(helmet());
+server.use(express.json());
+server.use(express.urlencoded({ extended: true }));
 
-server.listen(3333,()=>{
-    console.log('Servidor rodando: http://localhost:3000/');
-})
+server.use('/', router);
+
+server.listen(3333, () => {
+    console.log('Servidor rodando: http://localhost:3333/');
+});
