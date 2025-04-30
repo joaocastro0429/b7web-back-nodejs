@@ -1,5 +1,0 @@
-- Para criar um projeto ts 
-
-- tsc --init 
-- o projeto padrao utilizamos o src/public/script.ts 
--- rodar tsc src/script --outDir(ou veja saida do diretorio) public 
